@@ -1,7 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box;user-select:none;-webkit-tap-highlight-color:transparent;}
 :root{--pink:#ff6b9d;--pink2:#ff3d7f;--gold:#ffd166;--purple:#6a4c93;--green:#2ecc71;--red:#e74c3c;}
-body{font-family:'Segoe UI',Tahoma,sans-serif;
-  background:radial-gradient(circle at 50% 15%,#3a1c52,#1a0b2e 60%,#0a0418 100%);
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:radial-gradient(circle at 50% 15%,#3a1c52,#1a0b2e 60%,#0a0418 100%);
   min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;transition:background 1s;}
 #hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
 .heart{position:absolute;top:-40px;font-size:18px;opacity:0;animation:fall linear infinite;}
@@ -54,10 +53,6 @@ h1{color:var(--gold);font-size:21px;text-shadow:0 0 25px rgba(255,209,102,.8);le
   background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;display:inline-block;
   box-shadow:0 0 20px rgba(255,107,157,.7);animation:pulse 1.2s ease-in-out infinite;}
 #freeBadge.hidden{display:none;}
-#dailyBadge{margin:4px auto;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:bold;
-  background:linear-gradient(135deg,#f39c12,#e74c3c);color:#fff;display:inline-block;
-  box-shadow:0 0 20px rgba(243,156,18,.7);cursor:pointer;animation:pulse 1.2s infinite;}
-#dailyBadge.hidden{display:none;}
 
 #reels{display:flex;gap:10px;justify-content:center;margin:10px 0;perspective:800px;}
 .reel{width:92px;height:92px;background:linear-gradient(180deg,#fff,#ffe9f3);border-radius:16px;
@@ -224,8 +219,20 @@ h1{color:var(--gold);font-size:21px;text-shadow:0 0 25px rgba(255,209,102,.8);le
   color:#fff;transition:transform .15s;}
 .lbActions button:hover{transform:scale(1.03);}
 #lbSave{background:linear-gradient(135deg,var(--green),#27ae60);}
-#lbRefresh{background:linear-gradient(135deg,var(--pink),var(--purple));}
+#lbDownload{background:linear-gradient(135deg,#2980b9,#3498db);}
+#lbImport{background:linear-gradient(135deg,#8e44ad,#9b59b6);}
+#lbShare{background:linear-gradient(135deg,var(--pink),var(--purple));}
 #lbClear{background:linear-gradient(135deg,#7f1d1d,#c0392b);}
+#lbShareUrl{margin-top:8px;padding:8px;border-radius:9px;background:rgba(0,0,0,.5);
+  font-size:10px;color:#9b7fc4;word-break:break-all;display:none;border:1px solid rgba(255,107,157,.3);}
+#lbDirty{margin-top:8px;padding:7px 10px;border-radius:9px;background:rgba(243,156,18,.15);
+  border:1px solid rgba(243,156,18,.5);color:#ffd166;font-size:10px;text-align:center;display:none;}
+#lbDirty.on{display:block;}
+
+#dailyBadge{margin:4px auto;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:bold;
+  background:linear-gradient(135deg,#f39c12,#e74c3c);color:#fff;display:inline-block;
+  box-shadow:0 0 20px rgba(243,156,18,.7);cursor:pointer;animation:pulse 1.2s infinite;}
+#dailyBadge.hidden{display:none;}
 
 @media (max-width:480px){
   h1{font-size:16px;}.reel{width:70px;height:70px;font-size:34px;}
@@ -233,4 +240,4 @@ h1{color:var(--gold);font-size:21px;text-shadow:0 0 25px rgba(255,209,102,.8);le
   #xpBar{width:60px;}
   #wheelStage{width:170px;height:170px;}
   .lbName{max-width:70px;}
-}
+       }
