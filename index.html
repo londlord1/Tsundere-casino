@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎰 Цундере-Казино v7</title>
+<title>🎰 Цундере-Казино</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎰</text></svg>">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="hearts"></div>
@@ -13,7 +13,6 @@
 <div id="coinFlip"></div>
 <div id="toastBox"></div>
 
-<!-- МОДАЛКИ -->
 <div id="achModal" class="modal"><div class="modalInner">
   <h2>🏆 ДОСТИЖЕНИЯ</h2>
   <div id="achList"></div>
@@ -46,21 +45,35 @@
 
 <div id="lbModal" class="modal"><div class="modalInner">
   <h2>🏅 ТАБЛИЦА РЕКОРДОВ</h2>
-  <div class="hint" id="lbMode">Режим: <b>—</b></div>
-  <table class="lbTable">
-    <thead><tr><th>#</th><th>Игрок</th><th>Ур.</th><th style="text-align:right;">💰</th></tr></thead>
-    <tbody id="lbBody"></tbody>
-  </table>
+  <div class="hint">Хранится в файле <code style="color:#ff6b9d;">leaderboard.json</code>. Каждое устройство имеет свою копию.</div>
+  <table class="lbTable"><thead><tr><th>#</th><th>Игрок</th><th>Ур.</th><th style="text-align:right;">💰</th></tr></thead><tbody id="lbBody"></tbody></table>
   <div class="lbRow" style="margin-top:10px;">
     <input id="lbNameInput" type="text" maxlength="16" placeholder="Твоё имя (макс 16)" />
   </div>
   <div class="lbActions">
     <button id="lbSave">💾 ЗАПИСАТЬ</button>
-    <button id="lbRefresh">🔄 ОБНОВИТЬ</button>
+    <button id="lbShare">🔗 ССЫЛКА</button>
+  </div>
+  <div class="lbActions">
+    <button id="lbDownload">⬇️ СКАЧАТЬ JSON</button>
+    <button id="lbImportBtn">⬆️ ИМПОРТ JSON</button>
+  </div>
+  <div class="lbActions">
     <button id="lbClear">🗑️ ОЧИСТИТЬ</button>
   </div>
-  <div id="lbStatus" style="font-size:10px;color:#9b7fc4;text-align:center;margin-top:6px;min-height:14px;"></div>
+  <input type="file" id="lbImportFile" accept=".json,application/json" style="display:none">
+  <div id="lbShareUrl"></div>
+  <div id="lbDirty">⚠️ Есть несохранённые изменения. Скачай <b>leaderboard.json</b> и залей в репозиторий, чтобы сохранить.</div>
   <button class="closeBtn" data-close="lbModal">ЗАКРЫТЬ</button>
+</div></div>
+
+<div id="receiveModal" class="modal"><div class="modalInner">
+  <h2>📨 ВХОДЯЩИЙ РЕКОРД</h2>
+  <div id="receiveInfo" style="font-size:13px;color:#ffb3cd;text-align:center;line-height:1.6;margin:10px 0;"></div>
+  <div class="lbActions">
+    <button id="receiveAdd" style="background:linear-gradient(135deg,var(--green),#27ae60);">ДОБАВИТЬ В ТАБЛИЦУ</button>
+    <button id="receiveClose" style="background:linear-gradient(135deg,#7f1d1d,#c0392b);">ЗАКРЫТЬ</button>
+  </div>
 </div></div>
 
 <div id="nameModal" class="modal"><div class="modalInner">
@@ -78,8 +91,8 @@
   <button class="cornerBtn" id="achBtn" title="Достижения">🏆</button>
   <button class="cornerBtn" id="soundToggle" title="Звук">🔊</button>
 
-  <h1>🎰 ЦУНДЕРЕ-КАЗИНО v7 🎰</h1>
-  <p class="sub">облачные рекорды · реликвии · квесты · колесо · дневник · автоспин</p>
+  <h1>🎰 ЦУНДЕРЕ-КАЗИНО 🎰</h1>
+  <p class="sub">файловая таблица · шаринг · реликвии · квесты · колесо · дневник · автоспин</p>
   <div id="playerTag">Игрок: <b id="playerNameTag">— нажми чтобы ввести —</b></div>
 
   <div id="themeRow">
@@ -142,9 +155,9 @@
     <div><b id="stCombo">0</b>комбо</div>
     <div><b id="stRate">0%</b>win</div>
   </div>
-  <div class="marquee"><span>🏅 облачный рейтинг через Firebase · 🔁 автоспин (10 спинов) · 🎁 ежедневный бонус · 💾 автосохранение · 🌸 3 темы · 🌟 wild · 🎀🎀🎀 фриспины x2 · 💖💗💝 джекпот x50 · 🍀 +1 фриспин · 💀 проигрыш · </span></div>
+  <div class="marquee"><span>🏅 таблица в файле leaderboard.json · ⬇️ скачай и залей в репо · 🔁 автоспин · 🎁 ежедневный бонус · 💾 автосейв прогресса · 🌸 3 темы · 🌟 wild · 🎀🎀🎀 фриспины x2 · 💖💗💝 джекпот x50 · 🍀 +1 фриспин · 💀 проигрыш · </span></div>
 </div>
 
-<script type="module" src="js/game.js"></script>
+<script src="script.js" defer></script>
 </body>
-</html>
+                                                          </html>
